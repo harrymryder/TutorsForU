@@ -10,11 +10,11 @@
     <a href="" class="navbar-wagon-item navbar-wagon-link">Consultations</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Profile</a>
-    <%= link_to "Dashboard", page_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
     <% if user_signed_in? %>
-      <%= link_to 'Log out', root_path, class:"navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", page_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete, class:"navbar-wagon-item navbar-wagon-link" %>
     <% else %>
-      <%= link_to 'Log in', destroy_user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to 'Log in', user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
@@ -26,12 +26,12 @@
         <li><a href="#">Consultations</a></li>
         <li><a href="#">Messages</a></li>
         <li><a href="#">Profile</a></li>
-        <li><%= link_to "Dashboard", page_path(current_user) %></li>
         <% if user_signed_in? %>
+        <li><%= link_to "Dashboard", page_path(current_user) %></li>
 
-          <%= link_to 'Log out', root_path, class:"navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to 'Log out', destroy_user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
         <% else %>
-          <%= link_to 'Log in', destroy_user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to 'Log in', user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
         <% end %>
       </ul>
     </div>
