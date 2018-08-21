@@ -1,5 +1,6 @@
-<%= simple_form_form([@tutor, current_user]) do |f| %>
+<%= simple_form_for [@tutor, @meeting] do |f| %>
   <%= f.input :location %>
   <%= f.input :date %>
-  <%= f.input :subject, collection: Subject.all %>
+  <%= f.input :subject_id, collection: Subject.all %>
+  <%= f.submit %>
 <% end %>
