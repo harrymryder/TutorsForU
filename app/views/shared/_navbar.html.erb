@@ -10,7 +10,7 @@
     <a href="" class="navbar-wagon-item navbar-wagon-link">Consultations</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Profile</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Dashboard</a>
+    <%= link_to "Dashboard", page_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
     <% if user_signed_in? %>
       <%= link_to 'Log out', root_path, class:"navbar-wagon-item navbar-wagon-link" %>
     <% else %>
@@ -26,7 +26,7 @@
         <li><a href="#">Consultations</a></li>
         <li><a href="#">Messages</a></li>
         <li><a href="#">Profile</a></li>
-        <li><a href="#">Dashboard</a></li>
+        <li><%= link_to "Dashboard", page_path(current_user) %></li>
         <% if user_signed_in? %>
 
           <%= link_to 'Log out', root_path, class:"navbar-wagon-item navbar-wagon-link" %>

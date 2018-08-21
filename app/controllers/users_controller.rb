@@ -5,4 +5,5 @@ class UsersController < ApplicationController
     # @users = User.where
     @users = User.all.reject { |u| u.tutor? }
   end
+
 end

@@ -1,0 +1,7 @@
+<h1>New Subject</h1>
+
+<%= simple_form_for([@user, @user_subject]) do |f| %>
+  <%= f.association :subject, collection: Subject.all %>
+  <%= f.submit %>
+<% end %>
+
