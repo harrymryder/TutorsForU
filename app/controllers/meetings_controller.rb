@@ -8,15 +8,15 @@ class MeetingsController < ApplicationController
     tutor = User.find(params[:tutor_id])
     meeting.tutor_id = tutor
     if meeting.save
-      redirect_to
+      redirect_to page_path(current_user)
     else
       render :new
     end
   end
 
-  def show
-    @
-  end
+  # def index
+  #   @meetings = Meeting.where
+  # end
 
   private
 
