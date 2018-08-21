@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :user_subjects, only: [:new, :create, :destroy]
   end
-
+  resources :pages, only: [:home, :show]
   root to: 'pages#home'
 end
