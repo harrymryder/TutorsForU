@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :user_subjects
   has_many :subjects, through: :user_subjects
+  has_many :meetings
 
   def tutor?
     self.subjects.any?
