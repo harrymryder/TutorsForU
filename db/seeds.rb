@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+tutor = User.create!(name: "bob marley", email: "bob@marley.com", password: "123456")
+
+subjects = ["Math", "Music"]
+
+subjects.each do |name|
+  Subject.create!(name: name)
+end
+
+UserSubject.create!(tutor: tutor, subject: Subject.first)
+# bob = UserSubject.create!(subject_id: "italian")

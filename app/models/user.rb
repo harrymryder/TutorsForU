@@ -3,4 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :user_subjects
+  has_many :subjects, through: :user_subjects
+
+  def tutor?
+    self.subjects.any?
+  end
+
+  def student?
+    !tutor?
+  end
 end
