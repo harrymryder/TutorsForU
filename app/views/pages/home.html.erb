@@ -4,8 +4,19 @@
     <p>
       <span id="banner-typed-text"></span>
     </p>
+    <%= form_tag users_path, method: :get do %>
+    <%= text_field_tag :subject,
+      params[:subject],
+      class: "form-control",
+      placeholder: "Specify Subject" %>
+    <%= text_field_tag :location,
+      params[:location],
+      class: "form-control",
+      placeholder: "Specify location" %>
+    <%= submit_tag "Submit"%>
+    </div>
+    <% end %>
 
-    <a class="btn btn-primary btn-lg">Start now</a>
   </div>
 </div>
 <p>Some text about the service that Tutor to go provides</p>
@@ -19,7 +30,7 @@
   <img src="https://picsum.photos/500/300/?random" alt="what we do 1">
 </div>
 <br>
-
+<br>
 <div class="text-row-content">
   <img src="https://picsum.photos/500/300/?random" alt="what we do 1" >
   <ul>
