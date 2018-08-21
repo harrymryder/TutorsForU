@@ -1,1 +1,9 @@
+<h1>Tutors:</h1>
 
+<% @tutors.each do |tutor| %>
+  <p><%= tutor.name %></p>
+  <p><%= tutor.subjects %></p>
+  <p><%= tutor.location %></p>
+  <p><%= tutor.email %></p>
+  <%= link_to "More info", user_path(tutor) %>
+<% end %>

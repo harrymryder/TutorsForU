@@ -1,0 +1,6 @@
+<%= link_to "Back to all tutors", :back %>
+
+<h3><%= @tutor.name %></h3>
+<p><%= @tutor.email %></p>
+
+<%= link_to "Book this tutor", new_user_meeting_path(@tutor, current_user) %>
