@@ -17,4 +17,10 @@
 # UserSubject.create!(tutor: tutor, subject: Subject.first)
 # # bob = UserSubject.create!(subject_id: "italian")
 
-Subject.create({name: "english"})
+Subject.create!({name: "English"})
+Subject.create!({name: "French"})
+Subject.create!({name: "Maths"})
+Subject.create!({name: "Economics"})
+Subject.create!({name: "History"})
+Subject.create!({name: "Geography"})
+Subject.create!({name: "Sociology"})
