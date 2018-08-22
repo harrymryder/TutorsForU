@@ -4,3 +4,19 @@
   justify-content: space-around;
   align-items: center;
 }
+.banner-content {
+  h1 {
+    color: $red;
+  }
+  .input {
+    width: 280px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: none;
+  }
+  ::-webkit-input-placeholder {
+   text-align: center;
+  }
+}
