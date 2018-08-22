@@ -2,8 +2,8 @@
   <div class="booking-card">
     <h3>Book a lesson with <%= @tutor.name %></h3>
     <%= simple_form_for [@tutor, @meeting] do |f| %>
-      <%= f.input :location, placeholder: 'Enter your location', label:false, class: 'input' %>
-      <%= f.input :date, as: :string, input_html: { id: 'date' } %>
+      <%= f.input :location, placeholder: 'Enter your location', label:false, input_html: { class: 'input' } %>
+      <%= f.input :date, as: :string, input_html: { id: 'date', class: 'input' }, label:false, placeholder: "Select Date" %>
       <%= f.submit "Book tutor", class: "button" %>
     <% end %>
   </div>

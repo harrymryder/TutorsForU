@@ -30,7 +30,7 @@
     <div class="card" style="background-image: url(images/rio.jpg)">
       <ul>
         <li><%= tutor.name %>
-        <% subject_id = UserSubject.find(tutor.id).subject_id %>
+        <% subject_id = UserSubject.find_by(user_id: tutor.id).subject_id %>
         <% subject = Subject.find(subject_id) %>
         <li><%= subject.name%></li>
         <li><%= tutor.location %></li>

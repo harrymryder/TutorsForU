@@ -11,4 +11,6 @@ document.addEventListener("keyup", (event) => {
       let long = Number.parseFloat(data[0].lon)
       list.insertAdjacentHTML("beforeend", `<li>Latitude: ${lat}</li>`);
       list.insertAdjacentHTML("beforeend", `<li>Longitude: ${long}</li>`);
-    }
+    })
+ }
+})
