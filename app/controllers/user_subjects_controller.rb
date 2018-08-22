@@ -9,6 +9,7 @@ class UserSubjectsController < ApplicationController
   end
 
   def create
+
     @user_subject = UserSubject.new(user_subject_params)
     @user = User.find(params[:user_id])
     @user_subject.user = @user
