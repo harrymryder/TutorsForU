@@ -17,29 +17,35 @@
 # UserSubject.create!(tutor: tutor, subject: Subject.first)
 # # bob = UserSubject.create!(subject_id: "italian")
 puts 'Cleaning database...'
-# Subject.destroy_all
-# Meetings.destroy_all
-# User_subjects.destroy_all
-# Users.destroy_all
+Meeting.destroy_all
+UserSubject.destroy_all
+Subject.destroy_all
+User.destroy_all
 
-Subject.create!({name: "English"})
-Subject.create!({name: "French"})
-Subject.create!({name: "Maths"})
-Subject.create!({name: "Economics"})
-Subject.create!({name: "History"})
-Subject.create!({name: "Geography"})
-Subject.create!({name: "Sociology"})
+f = Subject.create!({name: "English"})
+g = Subject.create!({name: "French"})
+h = Subject.create!({name: "Maths"})
+i = Subject.create!({name: "Economics"})
+j = Subject.create!({name: "History"})
+k = Subject.create!({name: "Geography"})
+l = Subject.create!({name: "Sociology"})
 
-User.create!({name: "Bob", email: "bob@user.com", password: "123123", location: "Reigate", description: "I teach Maths", image:"../../app/assets/images/logo.png"})
-User.create!({name: "Rob", email: "rob@user.com", password: "123123", location: "Highgate", description: "I teach English", image:"../../app/assets/images/logo.png"})
-User.create!({name: "Cob", email: "cob@user.com", password: "123123", location: "Mygate", description: "I teach French", image:"../../app/assets/images/logo.png"})
-User.create!({name: "Lob", email: "lob@user.com", password: "123123", location: "Bygate", description: "I teach English", image:"../../app/assets/images/logo.png"})
-User.create!({name: "Fob", email: "fob@user.com", password: "123123", location: "bugger", description: "I teach Maths", image:"../../app/assets/images/logo.png"})
+a = User.create!({name: "Bob", email: "bob@user.com", password: "123123", location: "Reigate", description: "I teach Maths", image:"../../app/assets/images/logo.png"})
+b = User.create!({name: "Rob", email: "rob@user.com", password: "123123", location: "Highgate", description: "I teach English", image:"../../app/assets/images/logo.png"})
+c = User.create!({name: "Cob", email: "cob@user.com", password: "123123", location: "Mygate", description: "I teach French", image:"../../app/assets/images/logo.png"})
+d = User.create!({name: "Lob", email: "lob@user.com", password: "123123", location: "Bygate", description: "I teach English", image:"../../app/assets/images/logo.png"})
+e = User.create!({name: "Fob", email: "fob@user.com", password: "123123", location: "bugger", description: "I teach Maths", image:"../../app/assets/images/logo.png"})
 
 User.create!({name: "Cat", email: "cat@user.com", password: "123123", location: "Green Park",  image:"../../app/assets/images/logo.png"})
 User.create!({name: "Bat", email: "bat@user.com", password: "123123", location: "Bean Park", image:"../../app/assets/images/logo.png"})
 User.create!({name: "Gnat", email: "gnat@user.com", password: "123123", location: "Mean Park", image:"../../app/assets/images/logo.png"})
 User.create!({name: "Brat", email: "brat@user.com", password: "123123", location: "Dean Park", image:"../../app/assets/images/logo.png"})
 User.create!({name: "Fat", email: "fat@user.com", password: "123123", location: "Lean Park", image:"../../app/assets/images/logo.png"})
+
+UserSubject.create!({user_id: a.id, subject_id:h.id})
+UserSubject.create!({user_id: b.id, subject_id:f.id})
+UserSubject.create!({user_id: c.id, subject_id:g.id})
+UserSubject.create!({user_id: d.id, subject_id:f.id})
+UserSubject.create!({user_id: e.id, subject_id:h.id})
 
 puts 'Finished'
