@@ -1,8 +1,5 @@
-
-
-
 <div class="container">
-<h1>Tutors:</h1>
+  <h1>Tutors:</h1>
   <div class="row">
     <% @tutors.each do |tutor| %>
       <div class="col-xs-12 col-sm-4">
@@ -16,7 +13,9 @@
             <p><%= tutor.email %></p>
           </div>
           <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+
           <%= link_to "More info", user_path(tutor), class: "btn btn-primary card-link" %>
+
         </div>
       </div>
     <% end %>

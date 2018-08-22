@@ -1,0 +1,41 @@
+.form-container {
+  width: 100%;
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-card {
+  padding-bottom: 15px;
+  text-align: center;
+  width: 500px;
+  height: 300px;
+  background: #fff;
+  box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
+  border-radius: 15px;
+  display: inline-grid;
+  align-items: center;
+  justify-content: center;
+  .button {
+    width: 140px;
+    height: 50px;
+    background: $red;
+    color: $white;
+    border-radius: 5px;
+    border: 0;
+    opacity: 1;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  h3 {
+    color: $red;
+  }
+}
+.input {
+  width: 280px;
+  margin-bottom: 20px;
+  &:focus {
+    color: $red !important;
+  }
+}

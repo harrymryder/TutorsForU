@@ -16,6 +16,11 @@
 
 # UserSubject.create!(tutor: tutor, subject: Subject.first)
 # # bob = UserSubject.create!(subject_id: "italian")
+puts 'Cleaning database...'
+# Subject.destroy_all
+# Meetings.destroy_all
+# User_subjects.destroy_all
+# Users.destroy_all
 
 Subject.create!({name: "English"})
 Subject.create!({name: "French"})
@@ -24,3 +29,17 @@ Subject.create!({name: "Economics"})
 Subject.create!({name: "History"})
 Subject.create!({name: "Geography"})
 Subject.create!({name: "Sociology"})
+
+User.create!({name: "Bob", email: "bob@user.com", password: "123123", location: "Reigate", description: "I teach Maths", image:"../../app/assets/images/logo.png"})
+User.create!({name: "Rob", email: "rob@user.com", password: "123123", location: "Highgate", description: "I teach English", image:"../../app/assets/images/logo.png"})
+User.create!({name: "Cob", email: "cob@user.com", password: "123123", location: "Mygate", description: "I teach French", image:"../../app/assets/images/logo.png"})
+User.create!({name: "Lob", email: "lob@user.com", password: "123123", location: "Bygate", description: "I teach English", image:"../../app/assets/images/logo.png"})
+User.create!({name: "Fob", email: "fob@user.com", password: "123123", location: "bugger", description: "I teach Maths", image:"../../app/assets/images/logo.png"})
+
+User.create!({name: "Cat", email: "cat@user.com", password: "123123", location: "Green Park",  image:"../../app/assets/images/logo.png"})
+User.create!({name: "Bat", email: "bat@user.com", password: "123123", location: "Bean Park", image:"../../app/assets/images/logo.png"})
+User.create!({name: "Gnat", email: "gnat@user.com", password: "123123", location: "Mean Park", image:"../../app/assets/images/logo.png"})
+User.create!({name: "Brat", email: "brat@user.com", password: "123123", location: "Dean Park", image:"../../app/assets/images/logo.png"})
+User.create!({name: "Fat", email: "fat@user.com", password: "123123", location: "Lean Park", image:"../../app/assets/images/logo.png"})
+
+puts 'Finished'
