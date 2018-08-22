@@ -13,6 +13,9 @@
   background: #fff;
   box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
   border-radius: 15px;
+  display: inline-grid;
+  align-items: center;
+  justify-content: center;
   .button {
     width: 140px;
     height: 50px;
@@ -27,6 +30,10 @@
   }
   h3 {
     color: $red;
+  }
+  .input {
+    width: 280px;
+    margin-bottom: 20px;
   }
 }
 
