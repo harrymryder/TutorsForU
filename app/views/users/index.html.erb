@@ -6,42 +6,22 @@
     <% @tutors.each do |tutor| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category">Popular</div>
+          <div class="card-category"><%= tutor.name %></div>
           <div class="card-description">
-            <h2><%= tutor.name %></h2>
-            <p><%= tutor.location %></p>
-            <p><%= tutor.email %></p>
+              <% subject_id = UserSubject.find_by(user_id: tutor.id).subject_id %>
+              <% subject = Subject.find(subject_id) %>
+              <h5><%= subject.name%></h5>
+              <p><%= tutor.location %></p>
+              <p><%= tutor.email %></p>
+              <%= link_to "More info", user_path(tutor), class: "button" %>
+
           </div>
           <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-          <%= link_to "More info", user_path(tutor) %>
         </div>
       </div>
     <% end %>
   </div>
 
-
-
-<div class="contents">
-<div class="cards-container">
- <div class="row">
-
-  <% @tutors.each do |tutor| %>
-   <div class="col-xs-12 col-sm-6 col-md-6">
-    <div class="card" style="background-image: url(images/rio.jpg)">
-      <ul>
-        <li><%= tutor.name %>
-        <% subject_id = UserSubject.find_by(user_id: tutor.id).subject_id %>
-        <% subject = Subject.find(subject_id) %>
-        <li><%= subject.name%></li>
-        <li><%= tutor.location %></li>
-        <li><%= tutor.email %></li>
-        <li><%= link_to "More info", user_path(tutor) %></li>
-      </ul>
-    </div>
-   </div>
-  <% end %>
- </div>
-</div>
-<div id="map"></div>
+  <div id="map"></div>
 
 </div>
