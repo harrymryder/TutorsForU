@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 gem "geocoder"
+gem "simple_calendar", "~> 2.0"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
