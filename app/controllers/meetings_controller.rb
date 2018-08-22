@@ -1,13 +1,15 @@
 class MeetingsController < ApplicationController
   def new
     @meeting = Meeting.new
+    @tutor = User.find(params[:user_id])
   end
 
   def create
-    meeting = Meeting.new(meeting_params)
-    tutor = User.find(params[:tutor_id])
-    meeting.tutor_id = tutor
-    if meeting.save
+    @meeting = Meeting.new(meeting_params)
+    @tutor = User.find(params[:user_id])
+    @meeting.tutor = @tutor
+    @meeting.student = current_user
+    if @meeting.save
       redirect_to page_path(current_user)
     else
       render :new

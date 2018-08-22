@@ -2,3 +2,5 @@
 <% @user.user_subjects.each do |us| %>
   <li><%= Subject.find(us[:subject_id]).name %></li>
 <% end %>
+
+
