@@ -31,8 +31,11 @@
   h3 {
     color: $red;
   }
-  .input {
-    width: 280px;
-    margin-bottom: 20px;
+}
+.input {
+  width: 280px;
+  margin-bottom: 20px;
+  &:focus {
+    color: $red !important;
   }
 }
