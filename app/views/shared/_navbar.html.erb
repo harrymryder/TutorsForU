@@ -7,9 +7,9 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Consultations</a>
+<!--     <a href="" class="navbar-wagon-item navbar-wagon-link">Consultations</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Profile</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Profile</a> -->
     <% if user_signed_in? %>
       <%= link_to "Dashboard", page_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to 'Log out', destroy_user_session_path, method: :delete, class:"navbar-wagon-item navbar-wagon-link" %>
