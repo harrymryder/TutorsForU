@@ -1,5 +1,6 @@
 
 
+
 <div class="container">
   <%= link_to "Back to all tutors", :back %>
 
@@ -25,4 +26,7 @@
     <%= date.day %>
   <% end %>
 </div>
+
+
+<%= link_to "Book this tutor", new_user_meeting_path(current_user)%>
 
