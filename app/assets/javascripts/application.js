@@ -9,3 +9,4 @@ $("input.datepicker").each(function(input) {
   dateFormat: "yy-mm-dd",
   altField: $(this).next()
 })
+})
