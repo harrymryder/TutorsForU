@@ -12,4 +12,9 @@ class UsersController < ApplicationController
     @tutor = User.find(params[:id])
   end
 
+  private
+
+  def user_params
+    params.require(:article).permit(:name, :email, :password, :photo)
+  end
 end
