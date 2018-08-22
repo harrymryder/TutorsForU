@@ -1,9 +1,27 @@
 <h1>Tutors:</h1>
 
-<% @tutors.each do |tutor| %>
-  <p><%= tutor.name %></p>
-  <p><%= tutor.subjects %></p>
-  <p><%= tutor.location %></p>
-  <p><%= tutor.email %></p>
-  <%= link_to "More info", user_path(tutor) %>
-<% end %>
+
+
+<div class="contents">
+<div class="cards-container">
+ <div class="row">
+
+  <% @tutors.each do |tutor| %>
+   <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="card" style="background-image: url(images/rio.jpg)">
+      <ul>
+        <li><%= tutor.name %>
+        <% subject_id = UserSubject.find(tutor.id).subject_id %>
+        <% subject = Subject.find(subject_id) %>
+        <li><%= subject.name%></li>
+        <li><%= tutor.location %></li>
+        <li><%= tutor.email %></li>
+        <li><%= link_to "More info", user_path(tutor) %></li>
+      </ul>
+    </div>
+   </div>
+  <% end %>
+ </div>
+</div>
+<div id="map"></div>
+</div>
