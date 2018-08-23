@@ -103,5 +103,48 @@
     </div>
 
   </div>
+
 </div>
+
+<div class="subject-container">
+  <div class="profile-subjects">
+
+    <div class="subjects-header">
+      <h4>Your bio</h4>
+
+      <button type="button" class="button add-subject-button" data-toggle="modal" data-target="#bioModal">
+      Edit bio
+      </button>
+
+  <!--     module pop out -->
+      <div class="modal fade" id="bioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center" id="exampleModalLabel">Edit Bio</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(@user, url: user_path(@user)) do |f| %>
+                <%= f.input :description, as: :text, input_html: { rows: "2" }, class: 'input-lg' %>
+                <div class="modal-footer">
+                  <button type="button" class="button" data-dismiss="modal">Close</button>
+                  <%= f.submit "Update", class: 'button' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bio-text">
+      <p><%= @user.description %></p>
+    </div>
+
+  </div>
+</div>
+
 

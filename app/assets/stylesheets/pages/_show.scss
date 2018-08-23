@@ -78,7 +78,7 @@
 }
 .profile-subjects {
   width: 1000px;
-  height: 200px;
+  height: auto;
   box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
   border-radius: 15px;
   padding: 20px;
@@ -92,6 +92,7 @@
       text-align: left;
       padding: 20px;
       color: $red;
+      margin: 20px;
     }
   }
 }
@@ -104,5 +105,10 @@
     list-style: none;
     padding: 20px;
   }
+}
+.bio-text {
+  text-align: left;
+  padding: 20px;
+  margin-top: 20px;
 }
 
