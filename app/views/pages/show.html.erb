@@ -96,9 +96,12 @@
     </div>
 
     <div class="subjects">
-      <% @user.user_subjects.each do |us| %>
+      <% @user.user_subjects.each do |user| %>
       <ul>
-        <li><%= Subject.find(us[:subject_id]).name %></li>
+        <li><%= Subject.find(user[:subject_id]).name %>
+          <%= link_to "Remove", user_user_subject_path(user),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></li>
       </ul>
       <% end %>
     </div>
