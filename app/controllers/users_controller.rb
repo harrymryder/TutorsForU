@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @tutor = User.find(current_user[:id])
     @meetings = current_user.meetings_where_is_student
   end
-  
+
   def edit
     @user = User.find(params[:id])
   end
@@ -87,7 +87,7 @@ class UsersController < ApplicationController
     d = 6371 * c * (miles ? 1 / 1.6 : 1)
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :photo)
+    params.require(:user).permit(:name, :email, :password, :photo, :description)
   end
 end
 
