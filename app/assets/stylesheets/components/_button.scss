@@ -11,3 +11,17 @@
     }
   }
 
+  .button-sm {
+    padding: 0 5px;
+    width: 100px;
+    height: 24px;
+    background: $red;
+    color: $white;
+    border-radius: 3px;
+    border: 0;
+    opacity: 1;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+

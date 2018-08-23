@@ -46,3 +46,21 @@
 .card-link:hover {
   opacity: 0.9;
 }
+
+.card-index {
+  width: 500px;
+  height: 175px;
+
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  // position: relative;
+  margin: 5px 0;
+}
+
+.felt {
+ background: #ff6b6b;
+ width: 40%;
+ height: 100%;
+ // border-radius: 15px 15px 0px 0px;
+}
