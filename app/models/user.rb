@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :meetings_where_is_student, class_name: 'Meeting', primary_key: 'id', foreign_key: 'student_id'
   has_many :meetings_where_is_tutor, class_name: 'Meeting', primary_key: 'id', foreign_key: 'tutor_id'
 
+  mount_uploader :photo, PhotoUploader
 
   def tutor?
     self.subjects.any?

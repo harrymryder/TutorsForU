@@ -1,6 +1,58 @@
-<%= link_to "Add a subject", new_user_user_subject_path(current_user)  %>
-<% @user.user_subjects.each do |us| %>
-  <li><%= Subject.find(us[:subject_id]).name %></li>
-<% end %>
+<div class="profile-container">
+
+  <div class="profile">
+
+<!--     header -->
+    <div class="profile-header">
+      <%= image_tag "felt.png", class: "felt" %>
+      <div class="profile-image">
+        <%= cl_image_tag @user.photo, height: 200, width: 200, crop: :fill, class: "avatar-lrg" %>
+      </div>
+    </div>
+
+<!--     footer -->
+    <div class="profile-footer">
+      <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
+      Upload Profile Picture
+      </button>
+
+    <!--     module pop out -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Upload Profile Picture</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(@user, url: user_path(@user)) do |f| %>
+                <%= f.input :photo, class: 'input', label:false %>
+                <%= f.input :photo_cache, as: :hidden, class: 'input' %>
+                <div class="modal-footer">
+                  <button type="button" class="button" data-dismiss="modal">Close</button>
+                  <%= f.submit "Save changes", class: 'button' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%= link_to "Add a subject", new_user_user_subject_path(current_user), class: 'button'%>
+
+      <% @user.user_subjects.each do |us| %>
+        <li><%= Subject.find(us[:subject_id]).name %></li>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!--     module button -->
+
 
 
