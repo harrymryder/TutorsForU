@@ -2,31 +2,30 @@
 
 
 <div class="container">
-  <%= link_to "Back to all tutors", :back %>
-
+<h1>Dashboard</h1>
+      <%= link_to "Back to all tutors", :back %>
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-category">Popular</div>
+        <div class="card-category">Expert</div>
         <div class="card-description">
-          <h2><%= @tutor.name.capitalize %></h2>
+          <h2><%= @tutor.name %></h2>
           <p><%= @tutor.email %></p>
           <p><%= @tutor.description %></p>
         </div>
         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
         <a class="card-link" href="#" ></a>
       </div>
-      <%= link_to "Book this tutor", new_user_meeting_path(current_user) %>
+    </div>
+  </div>
+
+  <div class="calendar">
+  <p><%= link_to "Book this tutor", new_user_meeting_path(current_user), class: "btn btn-danger" %></p>
+    <div>
+      <%= month_calendar do |date| %>
+        <%= date.day %>
+      <% end %>
     </div>
   </div>
 </div>
-
-<div class="calendar">
-  <%= month_calendar do |date| %>
-    <%= date.day %>
-  <% end %>
-</div>
-
-
-<%= link_to "Book this tutor", new_user_meeting_path(current_user)%>
 
