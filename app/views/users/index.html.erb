@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="card-container">
 
@@ -29,9 +30,9 @@
   </div>
 
   <div id="map-container">
-
-      <p>MAP</p>
-
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.1.3/build/ol.js"></script>
+    <div id="map" data-tutors="<%= @tutors.to_json %>" data-query="<%= @query_location.to_json %>" data-logo = "<%= asset_path('logo.png') %>"
+    ></div>
+    <%= javascript_pack_tag "openmap" %>
   </div>
-
 </div>
