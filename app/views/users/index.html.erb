@@ -1,3 +1,4 @@
+
 <div class="container">
   <h1>Tutors:</h1>
   <div class="row">
@@ -22,4 +23,14 @@
 
  </div>
 </div>
+
+<!-- do not delete! -->
+<%= content_tag :div, id: "markers", data: { tutors: @tutors, query: @query_location} do %>
+<% end %>
+
+<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.1.3/build/ol.js"></script>
 <div id="map"></div>
+<%= javascript_pack_tag "openmap" %>
+<!--  -->
+
+
