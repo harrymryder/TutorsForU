@@ -9,17 +9,26 @@
   .wday-5 {}
   .wday-6 {}
 
-  .today {}
-  .past {}
+  .today {
+    font-weight: bold;
+    background-color: #F4F4F4;
+  }
+  .past {
+    opacity: 0.6;
+  }
   .future {}
 
   .start-date {}
 
   .prev-month {}
-  .next-month { }
+  .next-month {}
   .current-month {}
 
-  .has-events {}
+  .has-events {
+    opacity: 1;
+    background-color: #FDFFB9;
+    opacity: 0.9;
+  }
 
   .calendar-heading{
     text-align: center;
@@ -27,6 +36,7 @@
     display: flex;
     padding: 10px;
     background-color: #FF6B6B;
+    font-size: 25px;
   }
 }
 
@@ -41,6 +51,5 @@
   margin-top: -225px;
   top: 50%;
   color: #333333;
-  opacity: 0.8;
 }
 

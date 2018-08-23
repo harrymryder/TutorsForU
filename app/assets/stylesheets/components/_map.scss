@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-content: center;
+
+}
+.card-container{
+  flex: 0 0 200px;
+  margin-top: 40px;
+
+}
+
+#map-container {
+  flex: 0 0 auto;
+  width: 500px;
+  margin-left: 530px;
+  position: fixed !important;
+  margin-top: 60px;
+  height: calc(100vh - 70px);
+
+
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,1);
+}
+

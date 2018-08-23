@@ -1,37 +1,57 @@
+<div class="tutor-show-banner" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%), url('https://images.unsplash.com/photo-1527153818091-1a9638521e2a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5fce4ce8856a711cc50a14e03e58783a&auto=format&fit=crop&w=1158&q=80');">
+  <div class="banner-content">
+    <h1>Tutor Details</h1>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+  </div>
+</div>
+
+
+
 
 <div class="container">
-<h1>Tutors List</h1>
-  <%= link_to "Back to all tutors", :back %>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-category">Expert</div>
-        <div class="card-description">
-          <h2><%= @tutor.name %></h2>
-          <p><%= @tutor.email %></p>
-          <p><%= @tutor.description %></p>
-        </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
+  <p class="btn btn-danger tutor-show-back"><%= link_to "Back to Home", :back, class: 'tutor-show-btn' %></p>
+  <div class="tutor-show-content">
+    <div class="tutor-show-details">
+      <h2><%= @tutor.name %></h2>
+      <div class="tutor-show-text">
+        <p>Level: Advanced | Location: <%= @tutor.location %></p>
+        <p>Email: <%= @tutor.email %></p>
+        <p>Description: <%= @tutor.description %></p>
+      </div>
+      <div class="tutor-show-img">
+        <img src="https://kitt.lewagon.com/placeholder/users/tgenaitay" class="tutor-show-img">
+      </div>
+    </div>
+    <div class="tutor-booking-form">
+      <div class="booking-card">
+        <h3>Book a lesson with <%= @tutor.name %></h3>
+        <%= simple_form_for [@tutor, @meeting] do |f| %>
+          <%= f.input :location, placeholder: 'Enter your location', label:false, input_html: { class: 'input' } %>
+          <%= f.input :start_time, as: :string, input_html: { id: 'date', class: 'input' }, label:false, placeholder: "Select Date" %>
+          <%= f.association :subject %>
+          <%= f.submit "Book tutor", class: "button" %>
+        <% end %>
+        <%= javascript_pack_tag 'datepicker' %>
       </div>
     </div>
   </div>
-
-
-  <div class="calendar">
-    <p><%= link_to "Book this tutor", new_user_meeting_path(current_user), class: "btn btn-danger" %></p>
-
+  <div class="tutor-calendar">
     <div>
       <%= month_calendar events: @meetings do |date, meetings| %>
         <%= date.day %>
-
         <% meetings.each do |meeting| %>
           <div>
             <%= meeting.location %>
+            <%= meeting.start_time.strftime("%H:%M") %>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
 </div>
+
+
+
 

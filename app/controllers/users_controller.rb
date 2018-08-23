@@ -18,7 +18,8 @@ class UsersController < ApplicationController
 
   def show
     # binding.pry÷
-    @tutor = User.find(current_user[:id])
+    @tutor = User.find(params[:id])
+    @meeting = Meeting.new()
     @meetings = current_user.meetings_where_is_student
   end
 
@@ -73,7 +74,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :photo)
+    params.require(:user).permit(:name, :email, :password, :photo, :description)
   end
 end
 
