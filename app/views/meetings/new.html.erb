@@ -3,7 +3,8 @@
     <h3>Book a lesson with <%= @tutor.name %></h3>
     <%= simple_form_for [@tutor, @meeting] do |f| %>
       <%= f.input :location, placeholder: 'Enter your location', label:false, input_html: { class: 'input' } %>
-      <%= f.input :date, as: :string, input_html: { id: 'date', class: 'input' }, label:false, placeholder: "Select Date" %>
+      <%= f.input :start_time, as: :string, input_html: { id: 'date', class: 'input' }, label:false, placeholder: "Select Date" %>
+      <%= f.association :subject %>
       <%= f.submit "Book tutor", class: "button" %>
     <% end %>
   </div>

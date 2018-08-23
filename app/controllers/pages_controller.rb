@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(current_user[:id])
+    @user_subject = UserSubject.new()
+    @meetings = current_user.meetings_where_is_student
   end
 end

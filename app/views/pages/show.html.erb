@@ -1,49 +1,104 @@
+<h2 class='text-center dashboard-header'>Your dashboard</h2>
+
 <div class="profile-container">
 
   <div class="profile">
 
-<!--     header -->
-    <div class="profile-header">
-      <%= image_tag "felt.png", class: "felt" %>
       <div class="profile-image">
         <%= cl_image_tag( @user.photo, height: 200, width: 200, crop: :fill, class: "avatar-lrg") %>
       </div>
+<!--     header -->
+    <div class="profile-header">
+        <%= image_tag "felt.png", class: "felt" %>
+        <h3><%= @user.name %></h3>
     </div>
 
-<!--     footer -->
-    <div class="profile-footer">
-      <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
-      Upload Profile Picture
+
+    <button type="button" class="button edit-profile-button" data-toggle="modal" data-target="#editmodal">
+    Edit Profile Picture
+    </button>
+
+  <!--     module pop out -->
+    <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Upload Profile Picture</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for(@user, url: user_path(@user)) do |f| %>
+              <%= f.input :photo, class: 'input', label:false %>
+              <%= f.input :photo_cache, as: :hidden, class: 'input' %>
+              <div class="modal-footer">
+                <button type="button" class="button" data-dismiss="modal">Close</button>
+                <%= f.submit "Save changes", class: 'button' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dashboard-calendar">
+    <div>
+      <%= month_calendar events: @meetings do |date, meetings| %>
+        <%= date.day %>
+
+        <% meetings.each do |meeting| %>
+          <div>
+            <%= meeting.location %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<div class="subject-container">
+  <div class="profile-subjects">
+
+    <div class="subjects-header">
+      <h4>Subjects you teach</h4>
+
+      <button type="button" class="button add-subject-button" data-toggle="modal" data-target="#exampleModal">
+      Add a Subject
       </button>
 
-    <!--     module pop out -->
+  <!--     module pop out -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Upload Profile Picture</h5>
+              <h5 class="modal-title text-center" id="exampleModalLabel">Add a Subject</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <%= simple_form_for(@user, url: user_path(@user)) do |f| %>
-                <%= f.input :photo, class: 'input', label:false %>
-                <%= f.input :photo_cache, as: :hidden, class: 'input' %>
+              <%= simple_form_for(@user_subject, url: user_user_subjects_path(@user)) do |f| %>
+                <%= f.association :subject, collection: Subject.all %>
                 <div class="modal-footer">
                   <button type="button" class="button" data-dismiss="modal">Close</button>
-                  <%= f.submit "Save changes", class: 'button' %>
+                  <%= f.submit "Update", class: 'button' %>
                 </div>
               <% end %>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <%= link_to "Add a subject", new_user_user_subject_path(current_user), class: 'button'%>
-
+    <div class="subjects">
       <% @user.user_subjects.each do |us| %>
+      <ul>
         <li><%= Subject.find(us[:subject_id]).name %></li>
+      </ul>
       <% end %>
     </div>
 
@@ -51,8 +106,45 @@
 
 </div>
 
+<div class="subject-container">
+  <div class="profile-subjects">
 
-<!--     module button -->
+    <div class="subjects-header">
+      <h4>Your bio</h4>
 
+      <button type="button" class="button add-subject-button" data-toggle="modal" data-target="#bioModal">
+      Edit bio
+      </button>
+
+  <!--     module pop out -->
+      <div class="modal fade" id="bioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center" id="exampleModalLabel">Edit Bio</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(@user, url: user_path(@user)) do |f| %>
+                <%= f.input :description, as: :text, input_html: { rows: "2" }, class: 'input-lg' %>
+                <div class="modal-footer">
+                  <button type="button" class="button" data-dismiss="modal">Close</button>
+                  <%= f.submit "Update", class: 'button' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bio-text">
+      <p><%= @user.description %></p>
+    </div>
+
+  </div>
+</div>
 
 

@@ -34,6 +34,7 @@ j = Subject.create!({name: "History"})
 k = Subject.create!({name: "Geography"})
 l = Subject.create!({name: "Sociology"})
 
+
 a = User.create!({name: "Bob", email: "bob@user.com", password: "123123", location: "Reigate", description: "I teach Maths", image: File.open(File.join(Rails.root, 'app/assets/images/avatar1.jpeg'))})
 b = User.create!({name: "Rob", email: "rob@user.com", password: "123123", location: "Highgate", description: "I teach English", image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
 c = User.create!({name: "Cob", email: "cob@user.com", password: "123123", location: "Mygate", description: "I teach French", image:File.open(File.join(Rails.root, 'app/assets/images/avatar3.jpg'))})
@@ -45,6 +46,7 @@ User.create!({name: "Bat", email: "bat@user.com", password: "123123", location: 
 User.create!({name: "Gnat", email: "gnat@user.com", password: "123123", location: "Mean Park", image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
 User.create!({name: "Brat", email: "brat@user.com", password: "123123", location: "Dean Park", image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
 User.create!({name: "Fat", email: "fat@user.com", password: "123123", location: "Lean Park", image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
+
 
 UserSubject.create!({user_id: a.id, subject_id:h.id})
 UserSubject.create!({user_id: b.id, subject_id:f.id})
