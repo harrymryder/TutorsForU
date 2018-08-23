@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_102806) do
+ActiveRecord::Schema.define(version: 2018_08_23_100825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "meetings", force: :cascade do |t|
     t.string "location"
-    t.string "date"
     t.bigint "subject_id"
     t.integer "tutor_id"
     t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_time"
     t.index ["subject_id"], name: "index_meetings_on_subject_id"
   end
 

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     # binding.pry÷
-    @tutor = User.find(params[:id])
+    @tutor = User.find(current_user[:id])
+    @meetings = current_user.meetings_where_is_student
   end
-
 end
