@@ -10,4 +10,4 @@ $("input.datepicker").each(function(input) {
   altField: $(this).next()
   })
 })
-})
+
