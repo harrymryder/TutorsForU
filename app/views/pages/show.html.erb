@@ -14,12 +14,12 @@
     </div>
 
 
-    <button type="button" class="button edit-profile-button" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="button edit-profile-button" data-toggle="modal" data-target="#editmodal">
     Edit Profile Picture
     </button>
 
   <!--     module pop out -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -65,7 +65,33 @@
 
     <div class="subjects-header">
       <h4>Subjects you teach</h4>
-      <%= link_to "Add a subject", new_user_user_subject_path(current_user), class: 'button'%>
+
+      <button type="button" class="button add-subject-button" data-toggle="modal" data-target="#exampleModal">
+      Add a Subject
+      </button>
+
+  <!--     module pop out -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center" id="exampleModalLabel">Add a Subject</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(@user_subject, url: user_user_subjects_path(@user)) do |f| %>
+                <%= f.association :subject, collection: Subject.all %>
+                <div class="modal-footer">
+                  <button type="button" class="button" data-dismiss="modal">Close</button>
+                  <%= f.submit "Update", class: 'button' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="subjects">
