@@ -6,7 +6,7 @@
     <div class="profile-header">
       <%= image_tag "felt.png", class: "felt" %>
       <div class="profile-image">
-        <%= cl_image_tag @user.photo, height: 200, width: 200, crop: :fill, class: "avatar-lrg" %>
+        <%= cl_image_tag( @user.photo, height: 200, width: 200, crop: :fill, class: "avatar-lrg") %>
       </div>
     </div>
 
