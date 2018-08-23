@@ -54,5 +54,18 @@
 
 <!--     module button -->
 
+  <div class="calendar">
+    <div>
+      <%= month_calendar events: @meetings do |date, meetings| %>
+        <%= date.day %>
 
+        <% meetings.each do |meeting| %>
+          <div>
+            <%= meeting.location %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 

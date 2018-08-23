@@ -1,9 +1,7 @@
 
-
-
 <div class="container">
-<h1>Dashboard</h1>
-      <%= link_to "Back to all tutors", :back %>
+<h1>Tutors List</h1>
+  <%= link_to "Back to all tutors", :back %>
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
@@ -19,11 +17,19 @@
     </div>
   </div>
 
+
   <div class="calendar">
-  <p><%= link_to "Book this tutor", new_user_meeting_path(current_user), class: "btn btn-danger" %></p>
+    <p><%= link_to "Book this tutor", new_user_meeting_path(current_user), class: "btn btn-danger" %></p>
+
     <div>
-      <%= month_calendar do |date| %>
+      <%= month_calendar events: @meetings do |date, meetings| %>
         <%= date.day %>
+
+        <% meetings.each do |meeting| %>
+          <div>
+            <%= meeting.location %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
