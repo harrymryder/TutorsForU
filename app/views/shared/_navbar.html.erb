@@ -14,7 +14,7 @@
     <% if user_signed_in? %>
       <%= link_to "Dashboard", page_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to 'Log out', destroy_user_session_path, :method => :delete, class:"navbar-wagon-item navbar-wagon-link" %>
-      <%= cl_image_tag @user.photo, height: 30, width: 30, crop: :fill, class: "avatar-sm" %>
+      <%= cl_image_tag( current_user.photo, height: 35, width: 35, crop: :fill, class: "avatar-lrg") %>
     <% else %>
       <%= link_to 'Log in', user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
     <% end %>
