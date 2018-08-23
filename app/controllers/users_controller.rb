@@ -16,10 +16,11 @@ class UsersController < ApplicationController
 
   def show
     # binding.pry÷
-    @tutor = User.find(current_user[:id])
+    @tutor = User.find(params[:id])
+    @meeting = Meeting.new()
     @meetings = current_user.meetings_where_is_student
   end
-  
+
   def edit
     @user = User.find(params[:id])
   end
@@ -85,6 +86,7 @@ class UsersController < ApplicationController
     c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
 
     d = 6371 * c * (miles ? 1 / 1.6 : 1)
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :photo)
