@@ -24,12 +24,11 @@
  </div>
 </div>
 
-<!-- do not delete! -->
-<%= content_tag :div, id: "markers", data: { tutors: @tutors, query: @query_location} do %>
-<% end %>
+<!-- do not delete! Required for map -->
 
 <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.1.3/build/ol.js"></script>
-<div id="map"></div>
+<div id="map" data-tutors="<%= @tutors.to_json %>" data-query="<%= @query_location.to_json %>" data-logo = "<%= asset_path('logo.png') %>"
+></div>
 <%= javascript_pack_tag "openmap" %>
 <!--  -->
 

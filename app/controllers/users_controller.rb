@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    require 'json'
     if params[:subject].present? && params[:location].present?
       @tutors = test_subjects_match
       @tutors = geocode_proximity(@tutors)
