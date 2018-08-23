@@ -18,6 +18,16 @@ class UsersController < ApplicationController
     # binding.pry÷
     @tutor = User.find(params[:id])
   end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to page_path(@user)
+  end
 
   private
 
@@ -74,6 +84,9 @@ class UsersController < ApplicationController
     c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
 
     d = 6371 * c * (miles ? 1 / 1.6 : 1)
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :photo)
   end
 end
 
