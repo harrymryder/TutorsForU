@@ -1,10 +1,22 @@
 class UsersController < ApplicationController
 
   def index
-    # ideally with `.where` with activerecord
-    # @users = User.where
-    # @users = User.all
-    @tutors = User.all.select { |u| u.tutor? }
+    # geocode params location
+    if params[:subject].present?
+      @tutors = User.all.select { |u| u.tutor? }
+      @better_tutors = []
+      @tutors.each do |tutor|
+        subject = UserSubject.find_by(user_id: tutor.id).subject_id
+        subject = Subject.find(subject).name
+        if subject == params[:subject]
+          @better_tutors << tutor
+        end
+      end
+      @tutors = @better_tutors
+      #compare user lat and long to params lat and long}
+    else
+      @tutors = User.all.select { |u| u.tutor?}
+    end
   end
 
   def show
@@ -13,3 +25,4 @@ class UsersController < ApplicationController
   end
 
 end
+
