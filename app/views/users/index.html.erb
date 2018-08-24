@@ -2,7 +2,7 @@
 <div class="user-index-container">
   <div class="card-container">
 
-    <h3>Tutors that teach <%= Subject.find(params[:subject][:subject_id]).name %></h3>
+    <h3>Tutors teaching <%= Subject.find(params[:subject][:subject_id]).name %></h3>
 
     <div class="row">
       <% @tutors.each do |tutor| %>
