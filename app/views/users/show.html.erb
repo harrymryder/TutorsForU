@@ -20,7 +20,15 @@
       </div>
 
       <div class="tutor-show-img">
-        <%= cl_image_tag(@tutor.image, height: 100, width: 100, crop: :fill, class: 'avatar') %>
+        <% if @tutor.image.nil? %>
+          <% if current_user.image.nil? %>
+            <%= cl_image_tag(current_user.photo, height: 150, width: 150, crop: :fill, class: "avatar-lrg") %>
+          <% else%>
+            <%= cl_image_tag(current_user.image, height: 150, width: 150, crop: :fill, class: "avatar-lrg") %>
+          <% end %>
+        <% else %>
+          <%= cl_image_tag(@tutor.image, height: 100, width: 100, crop: :fill, class: 'avatar') %>
+        <% end %>
       </div>
     </div>
     <div class="tutor-booking-form">
