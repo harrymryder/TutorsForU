@@ -19,17 +19,17 @@ k = Subject.create!({name: "Geography"})
 l = Subject.create!({name: "Sociology"})
 
 
-a = User.create!({name: "Bob", email: "bob@user.com", password: "123123", location: "Reigate", description: "With an outstanding academic record, patience and the ability to communicate clearly, I have been the go-to tutor for children of my friends and family. ", image: File.open(File.join(Rails.root, 'app/assets/images/avatar1.jpeg'))})
-b = User.create!({name: "Rob", email: "rob@user.com", password: "123123", location: "Highgate", description: "I teach English", image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
-c = User.create!({name: "Cob", email: "cob@user.com", password: "123123", location: "Mygate", description: "I teach French", image:File.open(File.join(Rails.root, 'app/assets/images/avatar3.jpg'))})
-d = User.create!({name: "Lob", email: "lob@user.com", password: "123123", location: "Bygate", description: "I teach English", image:File.open(File.join(Rails.root, 'app/assets/images/avatar4.jpg'))})
-e = User.create!({name: "Fob", email: "fob@user.com", password: "123123", location: "bugger", description: "I teach Maths", image:File.open(File.join(Rails.root, 'app/assets/images/avatar5.jpg'))})
+a = User.create!({name: "Bob", email: "bob@user.com", password: "123123", location: "Reigate", description: "With an outstanding academic record, patience and the ability to communicate clearly, I have been the go-to tutor for children of my friends and family. ", image: "p8wdzi7mrfjfezn9szkm.jpg"})
+b = User.create!({name: "Rob", email: "rob@user.com", password: "123123", location: "Highgate", description: "I teach English", image: 'avatar2.jpg'})
+c = User.create!({name: "Cob", email: "cob@user.com", password: "123123", location: "Mygate", description: "I teach French", image:'avatar3.jpg'})
+d = User.create!({name: "Lob", email: "lob@user.com", password: "123123", location: "Bygate", description: "I teach English", image:'avatar4.jpg'})
+e = User.create!({name: "Fob", email: "fob@user.com", password: "123123", location: "bugger", description: "I teach Maths", image:'avatar5.jpg'})
 
-User.create!({name: "Cat", email: "cat@user.com", password: "123123", location: "Green Park",  image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
-User.create!({name: "Bat", email: "bat@user.com", password: "123123", location: "Bean Park", image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
-User.create!({name: "Gnat", email: "gnat@user.com", password: "123123", location: "Mean Park", image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
-User.create!({name: "Brat", email: "brat@user.com", password: "123123", location: "Dean Park", image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
-User.create!({name: "Fat", email: "fat@user.com", password: "123123", location: "Lean Park", image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
+User.create!({name: "Cat", email: "cat@user.com", password: "123123", location: "Green Park",  image: 'avatar6.jpg'})
+User.create!({name: "Bat", email: "bat@user.com", password: "123123", location: "Bean Park", image: 'avatar7.jpg'})
+User.create!({name: "Gnat", email: "gnat@user.com", password: "123123", location: "Mean Park", image: 'avatar8.jpg'})
+User.create!({name: "Brat", email: "brat@user.com", password: "123123", location: "Dean Park", image: 'avatar9.jpg'})
+User.create!({name: "Fat", email: "fat@user.com", password: "123123", location: "Lean Park", image: 'avatar10.jpg'})
 
 
 UserSubject.create!({user_id: a.id, subject_id:h.id})
