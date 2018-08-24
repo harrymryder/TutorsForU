@@ -8,15 +8,13 @@
 </div>
 
 
-
-
 <div class="container">
   <p class="btn btn-danger tutor-show-back"><%= link_to "Back to Home", :back, class: 'tutor-show-btn' %></p>
   <div class="tutor-show-content">
     <div class="tutor-show-details">
-      <h2><%= @tutor.name %></h2>
       <div class="tutor-show-text">
-        <p>Level: Advanced | Location: <%= @tutor.location %></p>
+        <h2><%= @tutor.name %></h2>
+        <p>Location: <%= @tutor.location %></p>
         <p>Email: <%= @tutor.email %></p>
         <p>Description: <%= @tutor.description %></p>
       </div>
@@ -30,7 +28,8 @@
         <%= simple_form_for [@tutor, @meeting] do |f| %>
           <%= f.input :location, placeholder: 'Enter your location', label:false, input_html: { class: 'input' } %>
           <%= f.input :start_time, as: :string, input_html: { id: 'date', class: 'input' }, label:false, placeholder: "Select Date" %>
-          <%= f.association :subject %>
+          <%= f.input :subject %>
+          <%= @subject %>
           <%= f.submit "Book tutor", class: "button" %>
         <% end %>
         <%= javascript_pack_tag 'datepicker' %>
