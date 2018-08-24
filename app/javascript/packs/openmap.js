@@ -1,5 +1,6 @@
 const mapElement = document.getElementById('map');
 const tutorMarkers = JSON.parse(mapElement.dataset.tutors)
+console.log(tutorMarkers)
 const queryMarker = JSON.parse(mapElement.dataset.query)
 
 var tutorVectorSource = new ol.source.Vector({
@@ -26,7 +27,7 @@ var tutorIconStyle = new ol.style.Style({
     anchorXUnits: 'fraction',
     anchorYUnits: 'pixels',
     opacity: 1,
-    scale: 0.07,
+    scale: 0.08,
     src: document.getElementById('map').dataset['logo']
   }))
 });
@@ -36,7 +37,8 @@ var queryIconStyle = new ol.style.Style({
     anchorXUnits: 'fraction',
     anchorYUnits: 'pixels',
     opacity: 0.75,
-    src: 'http://openlayers.org/en/v3.9.0/examples/data/icon.png'
+    scale: 0.08,
+    src: document.getElementById('map').dataset['pin']
   }))
 });
 var tutorsVectorLayer = new ol.layer.Vector({

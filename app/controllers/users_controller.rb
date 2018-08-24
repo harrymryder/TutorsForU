@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     if params[:subject].present? && params[:location].present?
       @tutors = test_subjects_match
       @tutors = geocode_proximity(@tutors)
-    elsif params[:subject].present?
+    elsif params[:subject_id].present?
       @tutors = test_subjects_match
     elsif params[:location].present?
       @tutors = User.all.select { |u| u.tutor? }
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @tutor = User.find(params[:id])
     @meeting = Meeting.new()
     @meetings = current_user.meetings_where_is_student
-    @subject = @tutor.subjects.first.name
+    @subjects = @tutor.subjects
     # @subject = @tutor.subjects.each { |subject| subject.name }
 
   end
@@ -42,9 +42,9 @@ class UsersController < ApplicationController
     @tutors = User.all.select { |u| u.tutor? }
       better_tutors = []
       @tutors.each do |tutor|
-        subject = UserSubject.find_by(user_id: tutor.id).subject_id
-        subject = Subject.find(subject).name
-        if subject == params[:subject]
+        user_subject = UserSubject.find_by(user_id: tutor.id).subject
+        params_subject = Subject.find(params[:subject][:subject_id])
+        if user_subject == params_subject
           better_tutors << tutor
         end
       end

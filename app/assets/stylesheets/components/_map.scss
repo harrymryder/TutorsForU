@@ -1,12 +1,17 @@
 .user-index-container {
   display: flex;
   align-content: center;
-
+  margin: 0 auto;
+  width: 1000px;
 }
 .card-container{
-  flex: 0 0 200px;
-  margin-top: 40px;
-
+  margin: 0 auto;
+  height: 100vh;
+  h3 {
+    margin-top: 80px;
+    margin-bottom: 40px;
+    color: $red;
+  }
 }
 
 #map-container {
@@ -15,9 +20,13 @@
   margin-left: 530px;
   position: fixed !important;
   margin-top: 60px;
-  height: calc(100vh - 70px);
-
-
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,1);
+  height: 100vh;
 }
 
+.ol-overlaycontainer-stopevent {
+height: 0px;
+}
+
+#map {
+height: 100%;
+}
