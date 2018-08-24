@@ -28,14 +28,12 @@ p {
 }
 .card-name {
   position: absolute;
-  bottom: 40px;
-  left: 35px;
+  bottom: 55px;
+  left: 45px;
   text-align: center;
   font-size: 16px;
   h4 {
     color: $white;
-    margin-bottom: 0px;
-    padding: 10px;
   }
 }
 .right-card {
@@ -48,13 +46,13 @@ p {
   position: absolute;
   color: black;
   width: 250px;
-  top: 35px;
-  left: 70px;
+  top: 25px;
+  left: 100px;
   p {
     font-size: 13px;
   }
   h5 {
-    margin: 5px 0;
+    margin: 10px 0;
     font-weight: bold;
   }
 
@@ -62,9 +60,14 @@ p {
 .card-btn {
   height: 25px;
   position: absolute;
-  bottom: 10px;
+  bottom: 25px;
   left: 100px;
   text-align: center;
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+    color: $white;
+  }
 }
 
 

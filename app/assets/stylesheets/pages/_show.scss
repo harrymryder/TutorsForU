@@ -6,7 +6,7 @@
 .profile-container {
   width: 1000px;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,8 +48,8 @@
 
 .dashboard-profile-image {
   position: absolute;
-  left: 130px;
-  top: 125px;
+  left: 100px;
+  top: 175px;
 }
 
 .dashboard-calendar {
@@ -126,5 +126,8 @@
   &:hover {
   opacity: 0.9;
   }
+}
+.show-page-footer {
+  height: 100px;
 }
 
