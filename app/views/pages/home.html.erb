@@ -8,7 +8,7 @@
       <div class="formy">
         <div class="inputs">
 
-          <%= collection_select(:subject, :subject_id, Subject.all, :id, :name) %>
+          <%= collection_select(:subject, :subject_id, Subject.all, :id, :name, { include_blank: "Choose a subject..." }, { class: "input collection-input" })%>
 
           <%= text_field_tag :location,
             params[:location],
