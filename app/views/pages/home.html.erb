@@ -7,10 +7,9 @@
     <%= form_tag users_path, method: :get do %>
       <div class="formy">
         <div class="inputs">
-          <%= text_field_tag :subject,
-            params[:subject],
-            class: "input",
-            placeholder: "Choose a subject..." %>
+
+          <%= collection_select(:subject, :subject_id, Subject.all, :id, :name) %>
+
           <%= text_field_tag :location,
             params[:location],
             class: "input",
