@@ -9,17 +9,18 @@
 
 
 <div class="container">
-  <p class="btn btn-danger tutor-show-back"><%= link_to "Back to Home", :back, class: 'tutor-show-btn' %></p>
+  <p class="btn btn-danger tutor-show-back"><%= link_to "Back to Tutors", :back, class: 'tutor-show-btn' %></p>
   <div class="tutor-show-content">
     <div class="tutor-show-details">
       <div class="tutor-show-text">
         <h2><%= @tutor.name %></h2>
-        <p>Location: <%= @tutor.location %></p>
-        <p>Email: <%= @tutor.email %></p>
-        <p>Description: <%= @tutor.description %></p>
+        <p><strong>Location:</strong> <%= @tutor.location %></p>
+        <p><strong>Email:</strong> <%= @tutor.email %></p>
+        <p><strong>Description:</strong> <%= @tutor.description %></p>
       </div>
+
       <div class="tutor-show-img">
-        <img src="https://kitt.lewagon.com/placeholder/users/tgenaitay" class="tutor-show-img">
+        <%= cl_image_tag(@tutor.image, height: 100, width: 100, crop: :fill, class: 'avatar') %>
       </div>
     </div>
     <div class="tutor-booking-form">
