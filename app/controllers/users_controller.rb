@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @tutor = User.find(params[:id])
     @meeting = Meeting.new()
     @meetings = current_user.meetings_where_is_student
-    @subject = @tutor.subjects.first.name
+    @subjects = @tutor.subjects
     # @subject = @tutor.subjects.each { |subject| subject.name }
 
   end
