@@ -16,7 +16,11 @@
       <%= link_to 'Log out', destroy_user_session_path, :method => :delete, class:"navbar-wagon-item navbar-wagon-link" %>
 
 
-      <%= cl_image_tag( current_user.photo, height: 35, width: 35, crop: :fill, class: "avatar-lrg") %>
+      <% if current_user.image.nil? %>
+        <%= cl_image_tag(current_user.photo, height: 35, width: 35, crop: :fill, class: "avatar-lrg") %>
+      <% else%>
+        <%= cl_image_tag(current_user.image, height: 35, width: 35, crop: :fill, class: "avatar-lrg") %>
+      <% end %>
 
 
     <% else %>

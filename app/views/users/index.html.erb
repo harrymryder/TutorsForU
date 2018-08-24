@@ -10,7 +10,12 @@
 
             <div class="left-card">
               <%= image_tag "felt.png", class: "felt-index" %>
-              <%= cl_image_tag(tutor.photo, height: 80, width: 80, crop: :fill, class: "avatar-lrg avatar-pos-index") %>
+              <% if tutor.image.nil? %>
+                <%= cl_image_tag(tutor.photo, height: 80, width: 80, crop: :fill, class: "avatar-lrg avatar-pos-index") %>
+              <% else%>
+                <%= cl_image_tag(tutor.image, height: 80, width: 80, crop: :fill, class: "avatar-lrg avatar-pos-index") %>
+              <% end %>
+
               <div class="card-name">
                 <h4> <%= tutor.name%> </h4>
                 <p><%= tutor.location %></p>
