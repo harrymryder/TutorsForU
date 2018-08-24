@@ -10,9 +10,9 @@ User.destroy_all
 #   File.open(File.join(Rails.root, "/app/assets/images/#{file_name}.jpg"))
 # end
 postcode = ['W2 3EY', 'WC2B 5LW', 'SE1 7DF', 'SE5 7FA', 'SW11 1ED', 'SW2 3NB', 'SE5 9AJ', 'SE21 8BU', 'SW6 7JR', 'SW1E 5HJ', 'W1W 5DD', 'BH13 6HG', 'CO7 8EA ','SE18 3JA', 'PH1 5BP ','GU14 0NU', 'WA7 4QY ','LD3 9TR ','SO51 7AP', 'B34 7EQ ','OX11 8DH', 'PL4 9HJ ','WD19 7PX', 'NE23 2FG', 'NE63 9HY', 'LL58 8HP', 'SK4 3AL ','SL3 9LX ','TF9 1HL ','SW1P 9UZ', 'DE13 0HZ', 'BT63 5GU', 'TA6 7RP ','SO51 6AU', 'PL5 3QW ','S71 5JJ ','CF47 0SE', 'BN16 1PA', 'N17 6JJ ','PL4 8NH ','BH19 3LU', 'SP4 8JJ ','BH16 6AY', 'GU15 9LU', 'NE16 6JY', 'M21 9DQ ','PH13 9NL', 'CM6 3LN ','G76 7BT ','DL10 4TH', 'SY10 8AY', 'IP2 8TA ','PR8 2NG ','UB5 4DY ','DT4 0QU ','PL32 9TB', 'N9 0AY '',DL3 0SY ','PR25 5AE', 'WA7 2PP ','WS12 4GP']
-images = ['avatar2.jpg', 'avatar3.jpg', 'avatar4.jpg', 'avatar5.jpg','avatar6.jpg', 'avatar7.jpg', 'avatar8.jpg', 'avatar9.jpg', 'avatar10.jpg' ]
+images = ['avatar11.png', 'avatar12.jpg', 'avatar13.jpg', 'avatar14.jpg', 'avatar15.jpg', 'avatar16.jpg', 'avatar17.jpg', 'avatar2.jpg', 'avatar3.jpg', 'avatar4.jpg', 'avatar5.jpg','avatar6.jpg', 'avatar7.jpg', 'avatar8.jpg', 'avatar9.jpg', 'avatar10.jpg' ]
 subjects = ['English', 'Maths', 'Italian', 'Spanish', 'Geography', 'History', 'Physics', 'Chemistry', 'Biology', 'Philosophy', 'Ethics', 'Economics']
-puts 'Creating 100 fake restaurants...'
+puts 'Creating 100 fake Users...'
 100.times do
  subject = Subject.new({
    name: subjects.sample
