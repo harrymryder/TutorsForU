@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     location_latlong = Geocoder.search(params[:location])
     better_tutors = []
     tutors.each do |tutor|
-      if haversine_distance(location_latlong.first.coordinates, [tutor.latitude, tutor.longitude]) <= 20
+      if haversine_distance(location_latlong.first.coordinates, [tutor.latitude, tutor.longitude]) <= 100
         better_tutors << tutor
       end
     end
