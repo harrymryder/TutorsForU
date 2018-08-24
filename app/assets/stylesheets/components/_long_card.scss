@@ -30,23 +30,42 @@ p {
 }
 .card-name {
   position: absolute;
-  bottom: 60px;
+  bottom: 40px;
   left: 35px;
-  font-size: 24px;
+  text-align: center;
+  font-size: 16px;
+  h4 {
+    color: black;
+    margin-bottom: 0;
+
+  }
 }
 
 .right-card {
   width: auto;
   position: relative;
   height: 100%;
+
 }
 .card-info {
   position: absolute;
   color: black;
-  width: 200px;
+  width: 250px;
   top: 0px;
-  left: 100px;
+  left: 50px;
+  p {
+    font-size: 13px;
+  }
+  h3 {
+    margin: 5px 0;
+  }
 
+}
+.card-btn {
+  position: absolute;
+  bottom: 5px;
+  left: 230px;
+  text-align: center;
 }
 
 
