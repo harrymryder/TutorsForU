@@ -16,8 +16,12 @@
   position: fixed !important;
   margin-top: 60px;
   height: calc(100vh - 70px);
-
-
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,1);
 }
 
+.ol-overlaycontainer-stopevent {
+height: 0px;
+}
+
+#map {
+height: 100%;
+}
