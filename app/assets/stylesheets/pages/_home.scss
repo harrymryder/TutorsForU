@@ -1,8 +1,13 @@
 // Specific CSS for your home-page
 .text-row-content {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  h4 {
+    color: $red;
+  }
+  .home-page-text {
+    margin: 50px;
+  }
 }
 .banner-content {
   h1 {
@@ -25,4 +30,15 @@
 }
 ::placeholder {
   color: $red;
+}
+#home-page-header {
+  color: $red;
+  margin: 100px;
+  text-align: center;
+  font-weight: bold;
+}
+.home-page-container {
+  width: 900px;
+  margin: 0 auto;
+  align-items: center;
 }
