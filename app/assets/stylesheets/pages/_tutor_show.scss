@@ -58,6 +58,9 @@
     padding: 20px;
     width: 400px;
     margin-left: 50px;
+    h2 {
+      color: $red;
+    }
   }
 }
 
@@ -76,5 +79,30 @@
 .tutor-calendar {
   margin: 40px 0;
   box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
+  box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
+  height: 500px;
+  border-radius: 15px;
+  .calendar-title {
+    color: $white;
+  }
+  a {
+    color: $white;
+    text-decoration: none !important;
+    opacity: 1;
+      &:hover {
+      color: $white;
+      text-decoration: none !important;
+      opacity: 0.8;
+    }
+  }
+}
+.booking-card {
+  .form-index-input {
+    width: 100%;
+    margin-right: 0px;
+  }
+}
+.avatar {
+  border-radius: 50%;
 }
 

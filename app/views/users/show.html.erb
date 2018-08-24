@@ -9,25 +9,34 @@
 
 
 <div class="container">
-  <p class="btn btn-danger tutor-show-back"><%= link_to "Back to Home", :back, class: 'tutor-show-btn' %></p>
+  <p class="btn btn-danger tutor-show-back"><%= link_to "Back to Tutors", :back, class: 'tutor-show-btn' %></p>
   <div class="tutor-show-content">
     <div class="tutor-show-details">
       <div class="tutor-show-text">
         <h2><%= @tutor.name %></h2>
-        <p>Location: <%= @tutor.location %></p>
-        <p>Email: <%= @tutor.email %></p>
-        <p>Description: <%= @tutor.description %></p>
+        <p><strong>Location:</strong> <%= @tutor.location %></p>
+        <p><strong>Email:</strong> <%= @tutor.email %></p>
+        <p><strong>Description:</strong> <%= @tutor.description %></p>
       </div>
+
       <div class="tutor-show-img">
-        <img src="https://kitt.lewagon.com/placeholder/users/tgenaitay" class="tutor-show-img">
+        <% if @tutor.image.nil? %>
+          <% if current_user.image.nil? %>
+            <%= cl_image_tag(current_user.photo, height: 150, width: 150, crop: :fill, class: "avatar-lrg") %>
+          <% else%>
+            <%= cl_image_tag(current_user.image, height: 150, width: 150, crop: :fill, class: "avatar-lrg") %>
+          <% end %>
+        <% else %>
+          <%= cl_image_tag(@tutor.image, height: 100, width: 100, crop: :fill, class: 'avatar') %>
+        <% end %>
       </div>
     </div>
     <div class="tutor-booking-form">
       <div class="booking-card tutor-show-card">
         <h3>Book a lesson with <%= @tutor.name %></h3>
         <%= simple_form_for [@tutor, @meeting] do |f| %>
-          <%= f.input :location, placeholder: 'Enter your location', label:false, input_html: { class: 'input' } %>
-          <%= f.input :start_time, as: :string, input_html: { id: 'date', class: 'input' }, label:false, placeholder: "Select Date" %>
+          <%= f.input :location, placeholder: 'Enter your location', label:false, input_html: { class: 'form-index-input' } %>
+          <%= f.input :start_time, as: :string, input_html: { id: 'date', class: 'form-index-input' }, label:false, placeholder: "Select Date" %>
           <%= f.association :subject, collection: @subjects %>
           <%= f.submit "Book tutor", class: "button" %>
         <% end %>

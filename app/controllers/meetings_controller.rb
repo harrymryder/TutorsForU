@@ -10,7 +10,7 @@ class MeetingsController < ApplicationController
     @meeting.tutor = @tutor
     @meeting.student = current_user
     if @meeting.save
-      redirect_to user_path(current_user)
+      redirect_to user_path(@tutor)
     else
       render :new
     end
