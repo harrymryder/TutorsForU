@@ -96,9 +96,13 @@
     </div>
 
     <div class="subjects">
-      <% @user.user_subjects.each do |us| %>
+      <% @user.user_subjects.each do |user| %>
       <ul>
-        <li><%= Subject.find(us[:subject_id]).name %></li>
+        <li><%= Subject.find(user[:subject_id]).name %>
+          <%= link_to user_user_subject_path(user), method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </li>
       </ul>
       <% end %>
     </div>
@@ -129,7 +133,7 @@
             </div>
             <div class="modal-body">
               <%= simple_form_for(@user, url: user_path(@user)) do |f| %>
-                <%= f.input :description, as: :text, input_html: { rows: "2" }, class: 'input-lg' %>
+                <%= f.input :description, as: :text, input_html: { rows: "5" }, class: 'input-lg' %>
                 <div class="modal-footer">
                   <button type="button" class="button" data-dismiss="modal">Close</button>
                   <%= f.submit "Update", class: 'button' %>
