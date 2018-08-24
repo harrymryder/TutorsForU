@@ -13,7 +13,7 @@ class UserSubjectsController < ApplicationController
     @user = User.find(params[:user_id])
     @user_subject.user = @user
     @user_subject.save
-    redirect_to user_path(current_user)
+    redirect_to page_path(@user)
   end
 
   def destroy

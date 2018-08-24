@@ -133,7 +133,7 @@
             </div>
             <div class="modal-body">
               <%= simple_form_for(@user, url: user_path(@user)) do |f| %>
-                <%= f.input :description, as: :text, input_html: { rows: "2" }, class: 'input-lg' %>
+                <%= f.input :description, as: :text, input_html: { rows: "5" }, class: 'input-lg' %>
                 <div class="modal-footer">
                   <button type="button" class="button" data-dismiss="modal">Close</button>
                   <%= f.submit "Update", class: 'button' %>
