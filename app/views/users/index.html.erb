@@ -1,5 +1,5 @@
 
-<div class="user-index-container">
+<div class="container user-index-container">
   <div class="card-container">
 
     <h2>Tutors:</h2>
@@ -11,7 +11,10 @@
             <div class="left-card">
               <%= image_tag "felt.png", class: "felt-index" %>
               <%= cl_image_tag(tutor.photo, height: 80, width: 80, crop: :fill, class: "avatar-lrg avatar-pos-index") %>
-              <p class= "card-name" > <%= tutor.name%> </p>
+              <div class="card-name">
+                <h4> <%= tutor.name%> </h4>
+                <p><%= tutor.location %></p>
+              </div>
             </div>
 
             <div class="right-card">
@@ -19,9 +22,9 @@
                 <% subject_id = UserSubject.find_by(user_id: tutor.id).subject_id %>
                 <% subject = Subject.find(subject_id) %>
                 <h3><%= subject.name%></h3>
-                <p ><%= tutor.location %></p>
-                <%= link_to "More info", user_path(tutor), class: "button-sm card-btn" %>
+                <p><%= tutor.description %></p>
               </div>
+              <%= link_to "More info", user_path(tutor), class: "button-sm card-btn" %>
             </div>
           </div>
         </div>

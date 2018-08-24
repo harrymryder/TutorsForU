@@ -1,19 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-# tutor = User.create!(name: "bob marley", email: "bob@marley.com", password: "123456")
-
-# subjects = ["Math", "Music"]
-
-# subjects.each do |name|
-#   Subject.create!(name: name)
-# end
-
 # UserSubject.create!(tutor: tutor, subject: Subject.first)
 # # bob = UserSubject.create!(subject_id: "italian")
 puts 'Cleaning database...'
@@ -35,7 +19,7 @@ k = Subject.create!({name: "Geography"})
 l = Subject.create!({name: "Sociology"})
 
 
-a = User.create!({name: "Bob", email: "bob@user.com", password: "123123", location: "Reigate", description: "I teach Maths", image: File.open(File.join(Rails.root, 'app/assets/images/avatar1.jpeg'))})
+a = User.create!({name: "Bob", email: "bob@user.com", password: "123123", location: "Reigate", description: "With an outstanding academic record, patience and the ability to communicate clearly, I have been the go-to tutor for children of my friends and family. ", image: File.open(File.join(Rails.root, 'app/assets/images/avatar1.jpeg'))})
 b = User.create!({name: "Rob", email: "rob@user.com", password: "123123", location: "Highgate", description: "I teach English", image:File.open(File.join(Rails.root, 'app/assets/images/avatar2.jpg'))})
 c = User.create!({name: "Cob", email: "cob@user.com", password: "123123", location: "Mygate", description: "I teach French", image:File.open(File.join(Rails.root, 'app/assets/images/avatar3.jpg'))})
 d = User.create!({name: "Lob", email: "lob@user.com", password: "123123", location: "Bygate", description: "I teach English", image:File.open(File.join(Rails.root, 'app/assets/images/avatar4.jpg'))})
